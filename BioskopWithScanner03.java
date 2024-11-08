@@ -2,31 +2,28 @@ import java.util.Scanner;
 public class BioskopWithScanner03 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String[][] penonton = new String[4][2];
-        String nama, next;
-        int baris, kolom;
 
-        while (true) {
-            System.out.print("Masukkan nama: ");
-            nama = sc.nextLine();
-            System.out.print("Masukkan baris: ");
-            baris = sc.nextInt();
-            System.out.print("Masukkan kolom: ");
-            kolom = sc.nextInt();
-            sc.nextLine();
+        System.out.println("Menu:");
+        System.out.println("1. input data penonton");
+        System.out.println("2. Tampilan daftar penonton");
+        System.out.println("3. Exit");
+        System.out.print("Pilih menu (1-3): ");
+        int pilihan = sc.nextInt();
+        sc.nextLine();
 
-            penonton[baris-1][kolom-1] = nama;
-
-            System.out.print("Input penonton lainnnya? (y/n): ");
-            next = sc.nextLine();
-
-            if (next.equalsIgnoreCase("n")) {
+        switch (pilihan) {
+            case 1:
+                System.out.println("Anda memilih untuk input data penonton");
                 break;
-                
-            }
-            
+            case 2:
+                System.out.println("Anda memilh untuk menampilkan daftar penonton");
+                break;
+            case 3:
+                System.out.println("Terima Kasih! keluar dari program");
+                sc.close();
+                return;
+            default:
+                System.out.println("Pilihan tidak valid. Silahkan coba lagi.");
         }
     }
 }
-
-    
